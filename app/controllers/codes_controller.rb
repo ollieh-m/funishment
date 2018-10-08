@@ -5,7 +5,7 @@ class CodesController < ApplicationController
   end
 
   def create
-    @guess = Code.new(word: params[:code][:word])
+    @guess = Code.new(word: params[:code][:word].downcase)
     if @guess.word == Code.last.word
       @reveal = Code.last
     else
