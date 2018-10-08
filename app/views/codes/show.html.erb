@@ -1,0 +1,12 @@
+<%= form_for @guess, url: code_path do |f| %>
+  <%= f.text_field :word %>
+  <%= f.submit 'Show the number' %>
+<% end %>
+
+<% if @reveal %>
+  <%= @reveal.number %>
+<% end %>
+
+<% if @fail %>
+  <%= @fail %>
+<% end %>
