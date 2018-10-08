@@ -1,12 +1,13 @@
-<%= form_for @guess, url: code_path do |f| %>
-  <%= f.text_field :word %>
-  <%= f.submit 'Show the number' %>
-<% end %>
-
-<% if @reveal %>
-  <%= @reveal.number %>
-<% end %>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
 <% if @fail %>
   <%= @fail %>
 <% end %>
+<% if @reveal %>
+  <%= @reveal.number %>
+<% end %>
+<%= form_for @guess, url: code_path do |f| %>
+  <%= f.text_field :word, autocomplete: :off %>
+  <%= f.submit 'Show the number' %>
+<% end %>
+
